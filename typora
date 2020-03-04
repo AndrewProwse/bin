@@ -1,0 +1,4 @@
+# cd /opt/Typora-linux-x64/
+
+nohup /opt/Typora-linux-x64/Typora $1 &
+rm nohup.out 1> /dev/null 2>&1

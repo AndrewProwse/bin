@@ -1,0 +1,1 @@
+ssh -i ~/.ssh/aws.pem centos@aws_node$1

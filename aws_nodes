@@ -1,0 +1,4 @@
+for HOST in `awk '/apro/ { print $2 }' $1 | sed 's/apro-//g'` ; do 
+    IP=`grep -A1 $HOST $1 | awk '/IP/ { print $2 }'` 
+    echo $IP"	"$HOST 
+done

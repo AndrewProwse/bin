@@ -1,0 +1,8 @@
+# cd /Volumes/Data
+# rsync -av --delete FLAC -e ssh sleepless:backups/home
+# rsync -av --delete Pictures -e ssh sleepless:backups/home
+# cd /Volumes/Data/Music
+# rsync -av --delete iTunes -e ssh sleepless:backups/home
+# rsync -av --delete SoS -e ssh sleepless:backups/home
+cd /Users/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/Projects /Users/aprowse

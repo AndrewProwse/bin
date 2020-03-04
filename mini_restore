@@ -1,0 +1,23 @@
+# cd /Volumes/Data
+# rsync -av --delete FLAC -e ssh sleepless:backups/home
+# rsync -av --delete Pictures -e ssh sleepless:backups/home
+# cd /Volumes/Data/Music
+# rsync -av --delete iTunes -e ssh sleepless:backups/home
+# rsync -av --delete SoS -e ssh sleepless:backups/home
+cd /home/aprowse
+FANCLUB=`ps -ef | grep overgrive | awk '/python/ { print $2 }'`
+kill -9 $FANCLUB
+rm -rf ~/.overgrive.lock
+rm -rf ~/.overgrive.log
+cp ~/GDrive/.overgrive.auth /tmp
+rm ~/GDrive/.overgrive.auth 
+rm ~/GDrive/.overgrive.cache
+rm ~/GDrive/.overgrive.lastsync
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/Documents /home/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/GDrive /home/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/Projects /home/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/bin /home/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/Working /home/aprowse
+rsync -av --delete -e ssh andy@mini:/Volumes/RAID1/HighVail/Pictures /home/aprowse
+cp /tmp/.overgrive.auth ~/GDrive/
+python3 /opt/thefanclub/overgrive/overgrive &

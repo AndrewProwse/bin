@@ -1,0 +1,21 @@
+#!/bin/bash
+
+case $1 in
+
+  front) 
+      sudo /usr/local/sbin/openconnect \
+      --servercert pin-sha256:gpK45+Z+vJTcPXWRzGeVVAlQkLCoIHiHOCa/nRc+YE8= \
+      --user=aprowse --protocol=gp fw-front.highvail.com
+      ;;
+
+  aims)
+      sudo /usr/local/sbin/openconnect \
+      --servercert pin-sha256:2xCkPKqSzxrffohZL2X2ZHNLcTAbJVoG1efN+uGHs+M= \
+      --user=aprowse --protocol=gp remote.aims.edu
+      ;;
+
+  test)
+      echo test
+      ;;
+
+esac

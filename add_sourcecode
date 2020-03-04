@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+for PROJ in `ls -l | grep ^d | awk '{print $9}'` ; do
+   cd $PROJ
+   git remote add sourcecode ssh://git@sourcecode.highvail.com/in/$PROJ.git
+   git remote set-url sourcecode ssh://git@sourcecode.highvail.com/in/$PROJ.git
+   git push -u sourcecode --all
+   git push sourcecode --tags
+   cd ..
+done
+

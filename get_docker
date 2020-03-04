@@ -1,0 +1,2 @@
+
+echo spin up a new vm, and just run `curl -sSL https://get.docker.io | bash` .. then `systemctl enable docker && systemctl start docker` then you’re rollin!

@@ -1,0 +1,2 @@
+sudo cu -l /dev/ttyUSB0 -s 9600
+# sudo cu -l cu.usbserial -s 9600
